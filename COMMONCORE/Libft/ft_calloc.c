@@ -1,6 +1,5 @@
-// #include <stdio.h>
 
-#include <stdlib.h>
+#include "libft.h"
 
 void *ft_calloc(unsigned long nmemb, unsigned long size)
 {

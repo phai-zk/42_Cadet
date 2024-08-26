@@ -1,9 +1,10 @@
-// #include <string.h>
-// #include <stdio.h>
 
-void	*ft_memmove(void *dest, const void *src, unsigned long n)
+// #include <string.h>
+#include "libft.h"
+
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned long	i;
+	size_t	i;
 	char			*str1;
 	char			*str2;
 	char			t_arr[128];

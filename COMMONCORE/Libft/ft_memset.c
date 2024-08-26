@@ -1,9 +1,10 @@
-// #include <string.h>
-// #include <stdio.h>
 
-void	*ft_memset(void *s, int c, unsigned long n)
+// #include <string.h>
+#include "libft.h"
+
+void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned long	i;
+	size_t	i;
 	char			*str;
 
 	i = 0;

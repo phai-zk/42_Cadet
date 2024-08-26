@@ -1,9 +1,10 @@
-// #include <string.h>
-// #include <stdio.h>
 
-void	*ft_memchr(const void *s, int c, unsigned long n)
+// #include <string.h>
+#include "libft.h"
+
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned long	i;
+	size_t	i;
 	char			*str;
 
 	i = -1;
@@ -19,7 +20,7 @@ void	*ft_memchr(const void *s, int c, unsigned long n)
 // 	char *str1 = "_ABCOCBA_";
 // 	char *str2 = "_ABCOCBA_";
 // 	unsigned char find = 'C';
-// 	unsigned long	n = 5;
+// 	size_t	n = 5;
 
 // 	printf("LIB:\t%s,\t %s\n", (char *)memchr(str1, find, n), str1);
 // 	printf("MY LIB:\t%s,\t %s\n", (char *)ft_memchr(str2, find, n), str2);

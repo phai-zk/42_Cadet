@@ -1,15 +1,6 @@
+
 // #include <string.h>
-// #include <stdio.h>
-
-static unsigned long	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {

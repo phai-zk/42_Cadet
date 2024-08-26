@@ -1,9 +1,10 @@
-// #include <stdio.h>
-// #include <string.h>
 
-int	ft_strncmp(const char *s1, const char *s2, unsigned long n)
+// #include <string.h>
+#include "libft.h"
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned long	i;
+	size_t	i;
 
 	i = -1;
 	while (++i < n && (s1[i] || s2[i]))
@@ -16,7 +17,7 @@ int	ft_strncmp(const char *s1, const char *s2, unsigned long n)
 // {
 // 	char *a = "16";
 // 	char *b = "165";
-// 	unsigned long n = 3;
+// 	size_t n = 3;
 // 	printf("LIB\t\t = %d\n", strncmp(a, b, n));
 // 	printf("My LIB\t = %d\n", ft_strncmp(a, b, n));
 // 	return 0;

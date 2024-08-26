@@ -1,7 +1,8 @@
-// #include <string.h>
-// #include <stdio.h>
 
-unsigned long	ft_strlen(const char *s)
+// #include <string.h>
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
 	int	i;
 

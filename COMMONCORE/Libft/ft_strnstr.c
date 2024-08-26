@@ -1,3 +1,6 @@
+
+#include "libft.h"
+
 static int	check(const char *big, const char *little)
 {
 	int	i;
@@ -9,9 +12,9 @@ static int	check(const char *big, const char *little)
 	return (1);
 }
 
-char	*ft_strnstr(const char *big,	const char *little, unsigned long len)
+char	*ft_strnstr(const char *big,	const char *little, size_t len)
 {
-	unsigned long	i;
+	size_t	i;
 
 	if (little[0] == '\0')
 		return ((char *)big);
@@ -22,12 +25,11 @@ char	*ft_strnstr(const char *big,	const char *little, unsigned long len)
 	return (0);
 }
 
-// #include <stdio.h>
 // int main(void)
 // {
 // 	char big[30] = "Hello rld  World NaJa";
 // 	char little[20] = "or";
-// 	unsigned long n = 15;
+// 	size_t n = 15;
 // 	char *find = ft_strnstr(big, little, n);
 // 	printf("find: %s\n", find);
 // 	return 0;

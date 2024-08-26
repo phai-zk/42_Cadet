@@ -1,8 +1,9 @@
-// #include <stdio.h>
 
-unsigned long ft_strlcpy(char *dest, const char *src, unsigned long size)
+#include "libft.h"
+
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	unsigned long i;
+	size_t	i;
 
 	i = -1;
 	while (src[++i] && !dest[i + 1] && i < size)

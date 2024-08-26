@@ -1,9 +1,10 @@
-#include <string.h>
-#include <stdio.h>
 
-int	ft_memcmp(const void *s1, const void *s2, unsigned long n)
+// #include <string.h>
+#include "libft.h"
+
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned long	i;
+	size_t	i;
 	char			*str1;
 	char			*str2;
 
@@ -16,13 +17,13 @@ int	ft_memcmp(const void *s1, const void *s2, unsigned long n)
 	return (0);
 }
 
-int main(void)
-{
-	char *a = "16";
-	char *b = "165";
-	unsigned long n = 3;
+// int main(void)
+// {
+// 	char *a = "16";
+// 	char *b = "165";
+// 	size_t n = 3;
 
-	printf("LIB\t\t = %d\n", memcmp(a, b, n));
-	printf("My LIB\t = %d\n", ft_memcmp(a, b, n));
-	return 0;
-}
+// 	printf("LIB\t\t = %d\n", memcmp(a, b, n));
+// 	printf("My LIB\t = %d\n", ft_memcmp(a, b, n));
+// 	return 0;
+// }

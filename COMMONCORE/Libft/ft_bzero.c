@@ -1,7 +1,8 @@
-// #include <string.h>
-// #include <stdio.h>
 
-void	ft_bzero(void *s, unsigned long n)
+// #include <string.h>
+#include "libft.h"
+
+void	ft_bzero(void *s, size_t n)
 {
 	char	*str;
 	
