@@ -1,1 +1,1 @@
-find ~/_Programming/C/42Bangkok/42_Cadet/COMMONCORE/MyLibs/ -type f -name "*.c" | wc -l
+find .. -type f -name "*.c" | wc -l

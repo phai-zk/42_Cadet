@@ -1,5 +1,5 @@
-// // #include <string.h>
-// #include <stdio.h>
+// #include <string.h>
+#include <stdio.h>
 
 static unsigned long	ft_strlen(const char *s)
 {
@@ -31,16 +31,16 @@ unsigned long	ft_strlcat(char *dest, char *src, unsigned long size)
 	return (len_d + len_s);
 }
 
-// int main(void)
-// {
-//     // char dest[] = "Hello";
-// 	// char src[] = "World";
-// 	// unsigned long l = strlcat(dest, src, 11);
-// 	// printf("Lib: %d %s\n", l, dest);
+int main(void)
+{
+    // char dest[] = "Hello";
+	// char src[] = "World";
+	// unsigned long l = strlcat(dest, src, 11);
+	// printf("Lib: %d %s\n", l, dest);
 
-// 	char dest2[] = "Hello";
-// 	char src2[] = "World";
-// 	unsigned long l2 = ft_strlcat(dest2, src2, 11);
-// 	printf("My Lib: %d %s\n", l2, dest2);
-// 	return (0);
-// }
+	char dest2[20];
+	char src2[] = "World";
+	unsigned long l2 = ft_strlcat(dest2, src2, 11);
+	printf("My Lib: %ld %s\n", l2, dest2);
+	return (0);
+}
