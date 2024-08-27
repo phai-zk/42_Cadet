@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:08:52 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/27 17:10:32 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/08/27 18:50:38 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strdup(const char *s)
 	len = ft_strlen(s);
 	dest = (char *)malloc(len + 1);
 	if (!dest)
-		return ("\0");
+		return (NULL);
 	i = -1;
 	while (s[++i])
 		dest[i] = s[i];

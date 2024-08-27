@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:33:14 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/27 17:33:39 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/08/27 18:50:38 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	setlen = ft_strlen(set);
 	str = (char *)malloc(len * sizeof(char));
 	if (!str)
-		return ("\0");
+		return (NULL);
 	start = 0;
 	while (start < len && check(s1 + start, set))
 		start += setlen;

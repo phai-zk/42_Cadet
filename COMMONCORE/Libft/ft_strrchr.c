@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:22:24 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/27 17:32:34 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/08/27 18:50:28 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strrchr(const char *s, int c)
 	while (len - (++i) >= 0)
 		if (str[len - i] == c)
 			return (&(str[len - i]));
-	return ('\0');
+	return (NULL);
 }
 
 // #include <string.h>

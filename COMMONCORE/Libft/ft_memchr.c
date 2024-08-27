@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 16:03:03 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/27 16:03:10 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/08/27 18:50:28 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (str[++i] && i < n)
 		if (str[i] == c)
 			return (&(str[i]));
-	return ('\0');
+	return (NULL);
 }
 
 // #include <string.h>

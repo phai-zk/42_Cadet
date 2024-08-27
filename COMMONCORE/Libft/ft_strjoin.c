@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:11:55 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/27 17:12:05 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/08/27 18:50:38 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	str = (char *)malloc((ft_strlen(s1) + ft_strlen(s2)) * sizeof(char));
 	if (!str)
-		return ("\0");
+		return (NULL);
 	i = -1;
 	while (s1[++i])
 		str[i] = s1[i];
