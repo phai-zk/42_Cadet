@@ -35,7 +35,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	setlen = ft_strlen(set);
 	str = (char *)malloc(len * sizeof(char));
 	if (!str)
-		return ('\0');
+		return ("\0");
 	start = 0;
 	while (start < len && check(s1 + start, set))
 		start += setlen;
