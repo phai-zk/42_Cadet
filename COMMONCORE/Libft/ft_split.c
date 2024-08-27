@@ -40,7 +40,7 @@ static char	*get_word(char *s, char c)
 		len++;
 	str = (char *)malloc(len * sizeof(char));
 	if (!str)
-		return ('\0');
+		return ("\0");
 	i = -1;
 	while (++i < len)
 		str[i] = s[i];
@@ -56,7 +56,7 @@ char	**ft_split(char const *s, char c)
 	size = countWord((char *)s, c);
 	str_arr = (char **)malloc(size * sizeof(char *));
 	if (!str_arr)
-		return ('\0');
+		return ("\0");
 	i = -1;
 	while (*s && (++i < size))
 	{
