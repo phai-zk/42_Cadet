@@ -1,5 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/27 17:14:13 by chinujte          #+#    #+#             */
+/*   Updated: 2024/08/27 17:14:14 by chinujte         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// #include <string.h>
 #include "libft.h"
 
 size_t	ft_strlen(const char *s)
@@ -12,6 +22,7 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
+// #include <string.h>
 // int main(int argc, char *argv[])
 // {
 //     (void)argc;

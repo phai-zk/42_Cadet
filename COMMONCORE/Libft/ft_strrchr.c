@@ -1,21 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/27 17:22:24 by chinujte          #+#    #+#             */
+/*   Updated: 2024/08/27 17:32:34 by chinujte         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// #include <string.h>
 #include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int i;
-	int len;
+	int		i;
+	int		len;
+	char	*str;
 
 	i = -1;
 	len = ft_strlen(s);
-	char *str = (char *)s;
+	str = (char *)s;
 	while (len - (++i) >= 0)
 		if (str[len - i] == c)
 			return (&(str[len - i]));
 	return ('\0');
 }
 
+// #include <string.h>
 // int main(void)
 // {
 //     char *str1 = "_ABCOCBA_";

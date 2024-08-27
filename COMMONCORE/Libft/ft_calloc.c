@@ -1,10 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/27 15:53:41 by chinujte          #+#    #+#             */
+/*   Updated: 2024/08/27 15:54:40 by chinujte         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_calloc(unsigned long nmemb, unsigned long size)
+void	*ft_calloc(unsigned long nmemb, unsigned long size)
 {
-	int *arr;
-	unsigned long i;
+	int				*arr;
+	unsigned long	i;
 
 	i = -1;
 	arr = (void *)malloc(nmemb * size);

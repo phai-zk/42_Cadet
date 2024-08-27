@@ -1,5 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/27 17:08:52 by chinujte          #+#    #+#             */
+/*   Updated: 2024/08/27 17:10:32 by chinujte         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// #include <string.h>
 #include "libft.h"
 
 char	*ft_strdup(const char *s)
@@ -14,11 +24,12 @@ char	*ft_strdup(const char *s)
 		return ("\0");
 	i = -1;
 	while (s[++i])
-		dest[i] = s[i]; 
+		dest[i] = s[i];
 	dest[i] = '\0';
 	return (dest);
 }
 
+// #include <string.h>
 // int	main()
 // {
 // 	char	*str;

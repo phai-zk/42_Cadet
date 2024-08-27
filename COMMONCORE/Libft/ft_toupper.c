@@ -1,14 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/27 17:43:57 by chinujte          #+#    #+#             */
+/*   Updated: 2024/08/27 17:44:28 by chinujte         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// #include <ctype.h>
 #include "libft.h"
 
 int	ft_toupper(int c)
 {
 	if ('a' <= c && c <= 'z')
 		return (c - 'a' + 'A');
-	return c;
+	return (c);
 }
 
+// #include <ctype.h>
 // int main(void)
 // {
 //     unsigned char c = 'a';

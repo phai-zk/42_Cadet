@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/27 17:44:41 by chinujte          #+#    #+#             */
+/*   Updated: 2024/08/27 17:45:12 by chinujte         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
@@ -24,13 +36,13 @@ char	*ft_strrchr(const char *s, int c); // 16
 int		ft_strncmp(const char *s1, const char *s2, size_t n); // 17
 void	*ft_memchr(const void *s, int c, size_t n); // 18
 int		ft_memcmp(const void *s1, const void *s2, size_t n); // 19
-char            *ft_strnstr(const char *big,	const char *little, size_t len); // 20
+char	*ft_strnstr(const char *big,	const char *little, size_t len); // 20
 int		ft_atoi(const char *nptr); // 21
 void	*ft_calloc(size_t nmemb, size_t size); // 22
 char	*ft_strdup(const char *s); // 23
 
-char    *ft_substr(char const *s, unsigned int start, size_t len); // 24
-char    *ft_strjoin(char const *s1, char const *s2); // 25
+char	*ft_substr(char const *s, unsigned int start, size_t len); // 24
+char	*ft_strjoin(char const *s1, char const *s2); // 25
 char	*ft_strtrim(char const *s1, char const *set); // 26
 char	**ft_split(char const *s, char c); // 27
 char	*ft_itoa(int n); // 28

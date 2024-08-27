@@ -1,11 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/27 16:07:56 by chinujte          #+#    #+#             */
+/*   Updated: 2024/08/27 16:08:07 by chinujte         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// #include <string.h>
 #include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
 	size_t	i;
-	char			*str;
+	char	*str;
 
 	i = 0;
 	str = (char *)s;
@@ -15,6 +25,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	return (s);
 }
 
+// #include <string.h>
 // int main(void)
 // {
 // 	int pos = 5;

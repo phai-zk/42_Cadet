@@ -1,5 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/27 17:00:53 by chinujte          #+#    #+#             */
+/*   Updated: 2024/08/27 17:03:14 by chinujte         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// #include <string.h>
 #include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
@@ -15,6 +25,7 @@ char	*ft_strchr(const char *s, int c)
 	return ('\0');
 }
 
+// #include <string.h>
 // int main(void)
 // {
 //     char *str1 = "Hello World";

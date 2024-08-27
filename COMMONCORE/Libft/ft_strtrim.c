@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/27 17:33:14 by chinujte          #+#    #+#             */
+/*   Updated: 2024/08/27 17:33:39 by chinujte         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
@@ -31,7 +42,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = setlen;
 	while (len - end >= 0 && check(s1 + (len - end), set))
 		end += setlen;
-	str = ft_substr(s1, start, len - (start + end - setlen));	
+	str = ft_substr(s1, start, len - (start + end - setlen));
 	return (str);
 }
 
