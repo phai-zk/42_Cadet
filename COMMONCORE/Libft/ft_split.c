@@ -53,7 +53,7 @@ char	**ft_split(char const *s, char c)
 	int		size;
 	int		i;
 
-	size = countWord((char *)s, c);
+	size = count_word((char *)s, c);
 	str_arr = (char **)malloc(size * sizeof(char *));
 	if (!str_arr)
 		return ("\0");
@@ -62,7 +62,7 @@ char	**ft_split(char const *s, char c)
 	{
 		while (*s && (*s == c))
 			s++;
-		str_arr[i] = ft_strdup(getWord((char *)s, c));
+		str_arr[i] = ft_strdup(get_word((char *)s, c));
 		while (*s && !(*s == c))
 			s++;
 	}
