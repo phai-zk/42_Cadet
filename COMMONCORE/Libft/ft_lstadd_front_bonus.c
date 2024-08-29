@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 18:39:18 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/29 19:28:02 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/08/29 20:46:52 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,35 +16,37 @@
 	t_list *test2 = ft_lstnew((char *)"World");
 	t_list *test3 = ft_lstnew((char *)"Na Ja");
 	
-	this Function is work like the test point the test2 
-	and the test2 is point the test3
+	this Function is work like the test3 point the test2 
+	and the test2 is point the test
 */
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	t_list	*tem;
+	t_list	*base;
 
 	if (*lst == NULL)
 	{
 		*lst = new;
 		return ;
 	}
-	tem = *lst;
-	ft_lstadd_front(&new, tem);
+	base = *lst;
 	*lst = new;
+	new -> next = base;
 }
 
-int main(void)
-{
-	t_list *test = ft_lstnew((char *)"Hello");
-	t_list *test2 = ft_lstnew((char *)"World");
-	t_list *test3 = ft_lstnew((char *)"Na Ja");
-	
-	ft_lstadd_back(&test, test2);
-	// ft_lstadd_back(&test, test3);
-	
-	t_list	*show = test;
-	printf("data: %s\n", (char *)show -> content);
-	printf("data: %s\n", (char *)show -> next -> content);
-	printf("data: %s\n", (char *)show -> next -> next -> content );
-	return 0;
-}
+// int main(void)
+// {
+// 	t_list *test = ft_lstnew((char *)"Hello");
+// 	t_list *test2 = ft_lstnew((char *)"World");
+// 	t_list *test3 = ft_lstnew((char *)"Na Ja");
+
+// 	ft_lstadd_front(&test, test2);
+// 	ft_lstadd_front(&test, test3);
+
+// 	t_list	*show = test;
+// 	while (show != NULL)
+// 	{
+// 		printf("data: %s\n", (char *)show -> content);
+// 		show = show -> next;
+// 	}
+// 	return 0;
+// }

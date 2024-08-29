@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:44:41 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/29 18:16:31 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/08/29 21:30:25 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,19 +55,20 @@ void	ft_putnbr_fd(int n, int fd); // 34
 
 typedef struct s_list
 {
-	void	*content;
-	struct	s_list *next;
+    void    *content;
+    struct  s_list *next;
 } t_list;
 
 // Bonus
-t_list  *ft_lstnew(void *content); // 35
+t_list	*ft_lstnew(void *content); // 35
 void	ft_lstadd_front(t_list **lst, t_list *new); // 36
 int		ft_lstsize(t_list *lst); // 37
 t_list	*ft_lstlast(t_list *lst); // 38
 void	ft_lstadd_front(t_list **lst, t_list *new); // 39
 void	ft_lstadd_back(t_list **lst, t_list *new); // 40
-// 41
-// 42
-// 43
+void	ft_lstdelone(t_list *lst, void (*del)(void *)); // 41
+void	ft_lstclear(t_list **lst, void (*del)(void *)); // 42
+void	ft_lstiter(t_list *lst, void (*f)(void *)); // 43
+t_list	*ft_lstmap(t_list *lst, void (*f)(void *), void (*del)(void *)); // 44
 
 #endif
