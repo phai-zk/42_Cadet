@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:44:41 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/27 17:45:12 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/08/29 03:05:50 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,18 @@ void	ft_putstr_fd(char *s, int fd); // 32
 void	ft_putendl_fd(char *s, int fd); // 33
 void	ft_putnbr_fd(int n, int fd); // 34
 
+typedef struct s_list
+{
+	void	*content;
+	struct	s_list *next;
+} t_list;
+
 // Bonus
-// 35
-// 36
-// 37
-// 38
-// 39
+t_list  *ft_lstnew(void *content); // 35
+void	ft_lstadd_front(t_list **lst, t_list *new); // 36
+int		ft_lstsize(t_list *lst); // 37
+t_list	*ft_lstlast(t_list *lst); // 38
+void	ft_lstadd_back(t_list **lst, t_list *new); // 39
 // 40
 // 41
 // 42
