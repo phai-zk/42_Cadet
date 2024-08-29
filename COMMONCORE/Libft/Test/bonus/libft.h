@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:44:41 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/29 03:05:50 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/08/29 18:16:31 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ t_list  *ft_lstnew(void *content); // 35
 void	ft_lstadd_front(t_list **lst, t_list *new); // 36
 int		ft_lstsize(t_list *lst); // 37
 t_list	*ft_lstlast(t_list *lst); // 38
-void	ft_lstadd_back(t_list **lst, t_list *new); // 39
-// 40
+void	ft_lstadd_front(t_list **lst, t_list *new); // 39
+void	ft_lstadd_back(t_list **lst, t_list *new); // 40
 // 41
 // 42
 // 43
