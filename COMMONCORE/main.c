@@ -1,13 +1,20 @@
 #include "libft.h"
 #include <string.h>
 
-int	main()
+int		main(int argc, const char *argv[])
 {
-	char *dest = "lorem ipsum dolor sit amet";
-	char *dest2 = "lorem ipsum dolor sit amet";
-	memmove(dest, "consectetur", 5);
-	printf("%s\n", dest);
-	// ft_memmove(dest2, "consectetur", 5);
-	// printf("%s\n", dest2);
+	char	*str;
+
+	alarm(5);
+	if (argc == 1)
+		return (0);
+	else if (atoi(argv[1]) == 1)
+	{
+		str = (char *)ft_calloc(30, 1);
+		if (!str)
+			write(1, "NULL", 4);
+		else
+			write(1, str, 30);
+	}
 	return (0);
 }
