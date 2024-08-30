@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 21:03:55 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/29 21:30:02 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/08/30 20:26:44 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*tem;
+	t_list	*tmp;
 
-	tem = lst;
-	while (tem != NULL)
+	tmp = lst;
+	while (tmp != NULL)
 	{
-		f(tem -> content);
-		tem = tem -> next;
+		f(tmp -> content);
+		tmp = tmp -> next;
 	}
 }

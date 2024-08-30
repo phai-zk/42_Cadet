@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 20:29:55 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/29 21:01:39 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/08/30 20:26:44 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list	*tem;
+	t_list	*tmp;
 
 	while (*lst)
 	{
-		tem = (*lst)-> next;
+		tmp = (*lst)-> next;
 		ft_lstdelone(*lst, del);
-		*lst = tem;
+		*lst = tmp;
 	}
 	free(*lst);
 	*lst = NULL;
