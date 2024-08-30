@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:44:41 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/29 21:30:25 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/08/30 15:03:08 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,9 @@ void	ft_putnbr_fd(int n, int fd); // 34
 
 typedef struct s_list
 {
-    void    *content;
-    struct  s_list *next;
-} t_list;
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 // Bonus
 t_list	*ft_lstnew(void *content); // 35

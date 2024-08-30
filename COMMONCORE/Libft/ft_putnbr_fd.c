@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 16:15:18 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/27 17:19:28 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/08/30 13:26:01 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,3 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	ft_putchar_fd(nb + '0', fd);
 }
-
-// int main()
-// {
-// 	ft_putnbr_fd(-2147483648, 0);
-// 	ft_putchar_fd('\n', 0);
-// 	return 0;
-// }

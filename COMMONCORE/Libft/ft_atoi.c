@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 15:51:35 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/27 15:52:00 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/08/30 13:31:19 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,3 @@ int	ft_atoi(const char *nptr)
 		result = (result * 10) + (nptr[i] - '0');
 	return (result * sign);
 }
-
-// int main(int argc, char const *argv[])
-// {
-// 	if (argc != 2)
-// 		return (1);
-// 	printf("LIB:\t%d\n", atoi(argv[1]));
-// 	printf("MY LIB:\t%d\n", ft_atoi(argv[1]));
-// 	return 0;
-// }

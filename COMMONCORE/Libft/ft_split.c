@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 16:29:07 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/27 16:58:36 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/08/30 13:25:55 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,17 +68,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (str_arr);
 }
-
-// int main(void)
-// {
-// 	char *s = "  Hello World !   ";
-// 	char c = ' ';
-// 	int len = countWord(s, c);
-
-// 	char **str = ft_split(s, c);
-// 	int i = -1;
-// 	while (++i < len)
-// 		printf("%s, ", str[i]);
-// 	printf("\n");
-// 	return 0;
-// }

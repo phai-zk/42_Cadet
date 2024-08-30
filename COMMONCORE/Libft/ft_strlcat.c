@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:13:22 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/27 17:13:23 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/08/30 13:25:37 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,3 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 	dest[len_d + i] = '\0';
 	return (len_d + len_s);
 }
-
-// int main(void)
-// {
-// 	char dest2[20];
-// 	char src2[] = "World";
-// 	size_t l2 = ft_strlcat(dest2, src2, 11);
-// 	printf("My Lib: %ld %s\n", l2, dest2);
-// 	return (0);
-// }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 17:15:39 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/30 13:25:17 by chinujte         ###   ########.fr       */
+/*   Created: 2024/08/30 13:03:17 by chinujte          #+#    #+#             */
+/*   Updated: 2024/08/30 13:30:42 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,25 @@ static int	check(const char *big, const char *little)
 	return (1);
 }
 
-char	*ft_strnstr(const char *big,	const char *little, size_t len)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	i;
+	char	*str;
+	int		len;
+	int		setlen;
+	int		start;
+	int		end;
 
-	if (little[0] == '\0')
-		return ((char *)big);
-	i = -1;
-	while (big[++i] && i < len)
-		if (check(&(big[i]), little))
-			return ((char *)&(big[i]));
-	return (0);
+	len = ft_strlen(s1);
+	setlen = ft_strlen(set);
+	str = (char *)malloc(len * sizeof(char));
+	if (!str)
+		return (NULL);
+	start = 0;
+	while (start < len && check(s1 + start, set))
+		start += setlen;
+	end = setlen;
+	while (len - end >= 0 && check(s1 + (len - end), set))
+		end += setlen;
+	str = ft_substr(s1, start, len - (start + end - setlen));
+	return (str);
 }

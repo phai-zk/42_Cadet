@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 15:53:41 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/27 15:54:40 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/08/30 13:32:18 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,28 +25,3 @@ void	*ft_calloc(unsigned long nmemb, unsigned long size)
 		arr[i] = 0;
 	return (arr);
 }
-
-// int main()
-// {
-// 	char *ptr = (char *)ft_calloc(5, sizeof(char));
-// 	char *ptr2 = (char *)calloc(5, sizeof(char));
-
-// 	if (!ptr || !ptr2)
-// 	{
-// 		printf("Memory allocation failed\n");
-// 		return 1;
-// 	}
-
-// 	printf("ft_calloc initialized memory:\n");
-// 	for (int i = 0; i < 5; i++)
-// 		printf("%c ", ptr[i]);
-// 	printf("\n");
-
-// 	printf("calloc initialized memory:\n");
-// 	for (int i = 0; i < 5; i++)
-// 		printf("%c ", ptr2[i]);
-// 	free(ptr);
-// 	free(ptr2);
-
-// 	return 0;
-// }

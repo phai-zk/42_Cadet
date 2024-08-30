@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 16:02:12 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/27 16:02:23 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/08/30 13:27:38 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,3 @@ char	*ft_itoa(int n)
 		str[0] = '-';
 	return (str);
 }
-
-// int main()
-// {
-// 	printf("\n%s", ft_itoa(-999));
-// 	return 0;
-// }

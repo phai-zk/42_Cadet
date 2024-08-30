@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:11:55 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/27 18:50:38 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/08/30 13:25:40 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str[i + j] = '\0';
 	return (str);
 }
-
-// int main(void)
-// {
-// 	char *s1 = "Hello ";
-// 	char *s2 = "World!";
-
-// 	printf("%s\n", ft_strjoin(s1, s2));
-// 	return 0;
-// }

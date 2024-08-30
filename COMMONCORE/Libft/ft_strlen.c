@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:14:13 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/27 17:14:14 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/08/30 13:25:28 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,3 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
-
-// #include <string.h>
-// int main(int argc, char *argv[])
-// {
-//     (void)argc;
-//     printf("Lib:\t%ld\nMyLib:\t%ld\n", strlen(argv[1]), ft_strlen(argv[1]));
-//     return 0;
-// }

@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:08:52 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/27 18:50:38 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/08/30 13:25:47 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,3 @@ char	*ft_strdup(const char *s)
 	dest[i] = '\0';
 	return (dest);
 }
-
-// #include <string.h>
-// int	main()
-// {
-// 	char	*str;
-// 	char	*allocated;
-
-// 	str = "Hello World";
-// 	printf("base\t : String: %s; \tAddress: @%p\n", str, str);
-// 	allocated = strdup(str);
-// 	printf("LIB\t : String: %s; \tAddress: @%p\n", allocated, allocated);
-// 	allocated = ft_strdup(str);
-// 	printf("MY LIB\t : String: %s; \tAddress: @%p\n", allocated, allocated);
-// 	return (0);
-// }

@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:22:24 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/27 18:50:28 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/08/30 13:25:13 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,3 @@ char	*ft_strrchr(const char *s, int c)
 			return (&(str[len - i]));
 	return (NULL);
 }
-
-// #include <string.h>
-// int main(void)
-// {
-//     char *str1 = "_ABCOCBA_";
-//     char *str2 = "_ABCOCBA_";
-//     unsigned char find = 'C';
-
-//     printf("LIB:\t%s,\t %s\n", strrchr(str1, find), str1);
-//     printf("MY LIB:\t%s,\t %s\n", ft_strrchr(str2, find), str2);
-//     return (0);
-// }

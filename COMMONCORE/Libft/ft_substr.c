@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:33:45 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/27 18:50:38 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/08/30 13:25:02 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub[i] = '\0';
 	return (sub);
 }
-
-// int main(void)
-// {
-// 	char *s = "Hello World!";
-//     unsigned int start = 6;
-//     size_t len = 10;
-//     printf("%s\n", ft_substr(s, start, len));
-// 	return 0;
-// }

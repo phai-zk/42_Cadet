@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 16:05:15 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/27 16:07:12 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/08/30 13:26:26 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,24 +30,3 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	str1[i + 1] = '\0';
 	return (dest);
 }
-
-// #include <string.h>
-// int main(void)
-// {
-// 	int n = 10;
-// 	int posX1 = 10;
-// 	int posX2 = 5;
-
-// 	char dest1[50] = "ABCDEFG";
-// 	printf("LIB\n");
-// 	printf("Before:\t%s, %s\n",dest1 + posX1, dest1+posX2);
-// 	memmove(dest1 + posX1, dest1+posX2, n*sizeof(char));
-// 	printf("After:\t%s, %s\n\n",dest1 + posX1, dest1+posX2);
-
-// 	char dest2[50] = "ABCDEFG";
-// 	printf("MY LIB\n");
-// 	printf("Before:\t%s, %s\n",dest2 + posX1, dest2+posX2);
-// 	ft_memmove(dest2 + posX1, dest2+posX2, n*sizeof(char));
-// 	printf("After:\t%s, %s\n\n",dest2 + posX1, dest2+posX2);
-// 	return (0);
-// }
