@@ -1,6 +1,5 @@
 # Prerequisites
 *.d
-Test*
 
 # Object files
 *.o
@@ -47,6 +46,7 @@ Test*
 *.mod*
 *.cmd
 .tmp_versions/
+Test*/
 modules.order
 Module.symvers
 Mkfile.old

@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:00:53 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/30 22:17:21 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/08/31 01:10:32 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,10 @@ char	*ft_strchr(const char *s, int c)
 
 	i = -1;
 	str = (char *)s;
-	if (s )
 	while (str[++i])
 		if (str[i] == c)
 			return (&(str[i]));
 	if (str[i] == c)
-		return (&(str[i]));	
+		return (&(str[i]));
 	return (NULL);
 }

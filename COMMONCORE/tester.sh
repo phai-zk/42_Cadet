@@ -1,0 +1,1 @@
+bash ../../TestWarMachine/grademe.sh
