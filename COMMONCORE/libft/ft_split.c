@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 16:29:07 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/30 13:25:55 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/08/31 19:57:40 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,14 @@ char	**ft_split(char const *s, char c)
 	int		i;
 
 	size = count_word((char *)s, c);
-	str_arr = (char **)malloc(size * sizeof(char *));
+	str_arr = (char **)malloc((size + 1) * sizeof(char *));
 	if (!str_arr)
 		return (NULL);
+	if (!(*s))
+	{
+		str_arr[0] = NULL;
+		return (str_arr);
+	}
 	i = -1;
 	while (*s && (++i < size))
 	{

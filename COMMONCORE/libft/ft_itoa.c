@@ -6,11 +6,14 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 16:02:12 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/30 13:27:38 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/08/31 21:59:38 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+// #include "libft.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
 
 char	*ft_itoa(int n)
 {
@@ -23,11 +26,12 @@ char	*ft_itoa(int n)
 	sign = 1;
 	if (size == 2)
 		sign = -1;
-	n *= sign;
-	ln = n;
-	while ((n / 10) > 0 && ++size)
-		n /= 10;
-	str = (char *)malloc((size) * sizeof(char));
+	ln = (long)n * sign;
+	while ((ln / 10) > 0 && ++size)
+		ln /= 10;
+	str = (char *)malloc((size + 1) * sizeof(char));
+	str[size] = '\0';
+	ln = (long)n * sign;
 	while (--size >= 0)
 	{
 		str[size] = (ln % 10) + '0';

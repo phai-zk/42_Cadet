@@ -6,42 +6,37 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 13:03:17 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/30 13:30:42 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/08/31 06:23:03 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	check(const char *big, const char *little)
+static int	check(const char str, const char *sub)
 {
-	int	i;
-
-	i = -1;
-	while (little[++i])
-		if (big[i] != little[i])
-			return (0);
-	return (1);
+	while (*sub)
+		if (str == *(sub++))
+			return (1);
+	return (0);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
-	int		len;
-	int		setlen;
-	int		start;
-	int		end;
+	size_t	len;
+	size_t	start;
+	size_t	end;
 
 	len = ft_strlen(s1);
-	setlen = ft_strlen(set);
 	str = (char *)malloc(len * sizeof(char));
 	if (!str)
 		return (NULL);
 	start = 0;
-	while (start < len && check(s1 + start, set))
-		start += setlen;
-	end = setlen;
-	while (len - end >= 0 && check(s1 + (len - end), set))
-		end += setlen;
-	str = ft_substr(s1, start, len - (start + end - setlen));
+	while (check(*(s1 + start), set))
+		start++;
+	end = len - 1;
+	while (end > 0 && check(*(s1 + (end)), set))
+		end--;
+	str = ft_substr(s1, start, (end - start + 1));
 	return (str);
 }

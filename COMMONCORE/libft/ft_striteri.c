@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:11:17 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/30 13:25:43 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/08/31 22:04:14 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,5 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 
 	i = -1;
 	while (s[++i])
-		(*f)(i, s);
+		(*f)(i, &s[i]);
 }
