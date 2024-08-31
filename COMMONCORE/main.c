@@ -6,51 +6,33 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 02:33:14 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/31 22:02:14 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/01 06:18:44 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <string.h>
+#include <malloc.h>
 
-
-void	ft_print_result(char const *s)
+int	main(void)
 {
-	int		len;
+	unsigned int	idx;
+	size_t			len;
+	char			*cmp;
+	char			*sub;
+	void			*p2;
 
-	len = 0;
-	while (s[len])
-		len++;
-	write(1, s, len);
-}
+	idx = 9;
+	len = 10;
+	cmp = "9";
+	sub = ft_substr("0123456789", idx, len);
 
-void	iter(unsigned int i, char *c)
-{
-	static int indexArray[11] = {0};
+	printf ("%s %d\n", sub, !strcmp(sub, cmp));
 
-	if (i > 10 || indexArray[i] == 1)
-		write(1, "wrong index\n", 12);
-	else
-		indexArray[i] = 1;
-	if (*c >= 'a' && *c <= 'z')
-		*c = *c - 32;
-	else if (*c >= 'A' && *c <= 'Z')
-		*c = *c + 32;
-}
+	p2 = malloc(2);
+	printf("%ld == %ld: %d\n", malloc_usable_size(sub), malloc_usable_size(p2), malloc_usable_size(sub) == malloc_usable_size(p2));
 
-int		main(int argc, const char *argv[])
-{
-	char	*str;
-
-	alarm(5);
-	str = (char *)malloc(sizeof(*str) * 12);
-	if (argc == 1 || !str)
-		return (0);
-	else if (atoi(argv[1]) == 1)
-	{
-		strcpy(str, "LoReM iPsUm");
-		ft_striteri(str, &iter);
-		ft_print_result(str);
-	}
+	free(sub);
+	free(p2);
 	return (0);
 }

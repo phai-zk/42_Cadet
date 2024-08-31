@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:22:24 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/30 13:25:13 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/01 04:06:09 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ char	*ft_strrchr(const char *s, int c)
 	i = -1;
 	len = ft_strlen(s);
 	str = (char *)s;
+	c = (unsigned char)c;
 	while (len - (++i) >= 0)
 		if (str[len - i] == c)
 			return (&(str[len - i]));
