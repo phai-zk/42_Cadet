@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 02:33:14 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/01 07:29:36 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/01 07:51:52 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,100 +14,29 @@
 #include <string.h>
 #include <malloc.h>
 
-void	ft_print_result(char const *s)
+
+int		main(int argc, const char *argv[])
 {
-	int		len;
-
-	len = 0;
-	while (s[len])
-		len++;
-	write(1, s, len);
-}
-
-void	ft_print_result2(int n)
-{
-	char c;
-
-	if (n >= 10)
-		ft_print_result2(n / 10);
-	c = n % 10 + '0';
-	write (1, &c, 1);
-}
-
-int main(int argc, const char *argv[])
-{
-	t_list		*elem;
-	int			arg;
+	void	*mem;
 
 	alarm(5);
-	if (argc == 1)
+	if (argc == 1 || !(mem = malloc(sizeof(*mem) * 5)))
 		return (0);
-	else if ((arg = atoi(argv[1])) == 1)
+	if (atoi(argv[1]) == 1)
 	{
-		char	str [] = "lorem ipsum dolor sit";
-
-		if (!(elem = ft_lstnew(str)))
-				ft_print_result("NULL");
-		else
-		{
-			if (!(elem->content))
-				ft_print_result("NULL");
-			else
-			{
-				ft_print_result(elem->content);
-			}
-			if (!(elem->next))
-			{
-				write(1, "\n", 1);
-				ft_print_result("NULL");
-			}
-		}
+		ft_memset(mem, -10, 5);
+		memset(mem, -10, 5);
+		write(1, mem, 5);
 	}
-	else if (arg == 2)
+	else if (atoi(argv[1]) == 2)
 	{
-		int		i;
-
-		i = 42;
-		if (!(elem = ft_lstnew(&i)))
-				ft_print_result("NULL");
-		else
-		{
-			if (!(elem->content))
-				ft_print_result("NULL");
-			else
-			{
-				ft_print_result2(*(int *)(elem->content));
-			}
-			if (!(elem->next))
-			{
-				write(1, "\n", 1);
-				ft_print_result("NULL");
-			}
-		}
-	}
-	else if (arg == 3)
-	{
-		if (!(elem = ft_lstnew(NULL)))
-				ft_print_result("NULL");
-		else
-		{
-			if (!(elem->content))
-			{
-				ft_print_result("NULL");
-			}
-			else
-			{
-				ft_print_result(elem->content);
-			}
-			if (!(elem->next))
-			{
-				write(1, "\n", 1);
-				ft_print_result("NULL");
-			}
-		}
+		memset(mem, 'e', 5);
+		ft_bzero(mem, 0);
+		write(1, mem, 5);
 	}
 	return (0);
 }
+
 // int	test_substr(void)
 // {
 	// unsigned int	idx;
