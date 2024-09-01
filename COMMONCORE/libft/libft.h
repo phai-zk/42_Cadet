@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:44:41 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/30 17:20:18 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/01 09:58:58 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_strrchr(const char *s, int c); // 16
 int		ft_strncmp(const char *s1, const char *s2, size_t n); // 17
 void	*ft_memchr(const void *s, int c, size_t n); // 18
 int		ft_memcmp(const void *s1, const void *s2, size_t n); // 19
-char	*ft_strnstr(const char *big,	const char *little, size_t len); // 20
+char	*ft_strnstr(const char *big, const char *little, size_t len); // 20
 int		ft_atoi(const char *nptr); // 21
 void	*ft_calloc(size_t nmemb, size_t size); // 22
 char	*ft_strdup(const char *s); // 23
