@@ -1,2 +1,3 @@
+./makefiles.sh
 cc main.c -L. libft.a
-./a.out | cat -e
+./a.out $1| cat -e
