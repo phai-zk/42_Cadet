@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 02:33:14 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/01 07:51:52 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/01 08:17:30 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,17 @@
 #include <malloc.h>
 
 
-int		main(int argc, const char *argv[])
+int	main(int argc, const char *argv[])
 {
-	void	*mem;
+	char	*s;
+	char	*d;
+	char	*mem;
 
-	alarm(5);
-	if (argc == 1 || !(mem = malloc(sizeof(*mem) * 5)))
-		return (0);
-	if (atoi(argv[1]) == 1)
-	{
-		ft_memset(mem, -10, 5);
-		memset(mem, -10, 5);
-		write(1, mem, 5);
-	}
-	else if (atoi(argv[1]) == 2)
-	{
-		memset(mem, 'e', 5);
-		ft_bzero(mem, 0);
-		write(1, mem, 5);
-	}
+	s = ft_strdup("\0");
+	d = ft_strdup("Hello");
+
+	mem = memcpy(d, s, 5);
+	printf("%s %s %s", s, d, mem);
 	return (0);
 }
 

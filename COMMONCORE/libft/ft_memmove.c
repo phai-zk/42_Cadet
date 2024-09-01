@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 16:05:15 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/31 02:31:56 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/01 08:18:33 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	char	*tmp_dest;
 	size_t	i;
 
-	if (!src || !dest)
-		return (NULL);
 	tmp_dest = (char *)dest;
 	tmp_src = (char *)src;
 	i = -1;

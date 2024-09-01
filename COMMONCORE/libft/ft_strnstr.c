@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:15:39 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/01 04:19:04 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/01 08:52:19 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	check(const char *big, const char *little)
 	return (1);
 }
 
-char	*ft_strnstr(const char *big,	const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	lil_len;
