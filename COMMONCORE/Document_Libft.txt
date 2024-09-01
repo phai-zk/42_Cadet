@@ -198,13 +198,13 @@ Part 2
 |											  |
 | return	: -									  |
 ===========================================================================================
-| ft_putchar_fd	: Write a char in by file director = 'fd'.				  |
+| ft_putchar_fd	: Write a char in by file descriptor = 'fd'.				  |
 |											  |
 | prototype	: void	ft_putchar_fd(char c, int fd);	 				  |
 |											  |
 | return	: -									  |
 ===========================================================================================
-| ft_putstr_fd	: Write a char pointer in by file director = 'fd'.			  |
+| ft_putstr_fd	: Write a char pointer in by file descriptor = 'fd'.			  |
 |											  |
 | prototype	: void	ft_putstr_fd(char c, int fd);	 				  |
 |											  |
@@ -216,7 +216,7 @@ Part 2
 |											  |
 | return	: -									  |
 ===========================================================================================
-| ft_putnbr_fd	: Write a number in by file director = 'fd'. (Handle INTMAX)		  |
+| ft_putnbr_fd	: Write a number in by file descriptor = 'fd'. (Handle INTMAX)		  |
 |											  |
 | prototype	: void	ft_putnbr_fd(int n, int fd);	 				  |
 |											  |
