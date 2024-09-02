@@ -5,10 +5,10 @@ ft_strncmp.c ft_tolower.c ft_isalnum.c ft_itoa.c ft_memset.c ft_split.c ft_strlc
 ft_putchar_fd.c ft_strchr.c ft_strlcpy.c ft_strrchr.c
 
 SRCBONUSES	= ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c\
-ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c $(SRCS)
+ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c ${SRCS}
 
-OBJS		= $(SRCS:.c=.o)
-OBJBONUSES	= $(SRCBONUSES:.c=.o)
+OBJS		= ${SRCS:.c=.o}
+OBJBONUSES	= ${SRCBONUSES:.c=.o}
 NAME		= libft.a
 LIB_CREATE	= ar rc
 LIB_RAN		= ranlib
@@ -17,26 +17,26 @@ CFLAGS		= -Wall -Wextra -Werror
 
 .c.o:
 	@echo "Compile: $<."
-	@$(CC) $(CFLAGS) -c $< -o $@ -I .
+	@${CC} ${CFLAGS} -c $< -o $@ -I .
 
-$(NAME): $(OBJS)
-	@$(LIB_CREATE) $(NAME) $(OBJS)
-	@$(LIB_RAN) $(NAME)
+${NAME}: ${OBJS}
+	@${LIB_CREATE} ${NAME} ${OBJS}
+	@${LIB_RAN} ${NAME}
 	@echo "\nCreate lib complete!"
 
-bonus : $(OBJBONUSES)
-	@$(LIB_CREATE) $(NAME) $(OBJBONUSES)
-	@$(LIB_RAN) $(NAME)
+bonus : ${OBJBONUSES}
+	@${LIB_CREATE} ${NAME} ${OBJBONUSES}
+	@${LIB_RAN} ${NAME}
 	@echo "\nCreate bonus lib complete!"
 
-all: $(NAME)
+all: ${NAME}
 
 clean:
-	@$(RM) $(OBJS) | $(RM) $(OBJBONUSES)
+	@${RM} ${OBJS} | ${RM} ${OBJBONUSES}
 	@echo "Clean all object files"
 
 fclean: clean
-	@$(RM) $(NAME)
+	@${RM} ${NAME}
 	@echo "Clean full!"
 
 re: fclean all
