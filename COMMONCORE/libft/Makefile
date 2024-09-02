@@ -4,8 +4,11 @@ ft_memcpy.c ft_putnbr_fd.c ft_striteri.c ft_strmapi.c ft_substr.c ft_calloc.c ft
 ft_strncmp.c ft_tolower.c ft_isalnum.c ft_itoa.c ft_memset.c ft_split.c ft_strlcat.c ft_strnstr.c ft_toupper.c ft_isalpha.c ft_memchr.c\
 ft_putchar_fd.c ft_strchr.c ft_strlcpy.c ft_strrchr.c
 
-SRCBONUSES	= ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c\
-ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c $(SRCS)
+# SRCBONUSES	= ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c\
+# ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c $(SRCS)
+
+SRCBONUSES	= ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c ft_lstiter.c ft_lstlast.c\
+ft_lstmap.c ft_lstnew.c ft_lstsize.c $(SRCS)
 
 OBJS		= $(SRCS:.c=.o)
 OBJBONUSES	= $(SRCBONUSES:.c=.o)
@@ -40,3 +43,8 @@ fclean: clean
 	@echo "Clean full!"
 
 re: fclean all
+
+# so for libft-unit-tests
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)

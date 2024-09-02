@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:15:39 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/01 08:52:19 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/02 23:48:37 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	lil_len;
 
-	if (little[0] == '\0')
+	if (little[0] == '\0' || (!len && !big))
 		return ((char *)big);
 	i = -1;
 	lil_len = ft_strlen(little);

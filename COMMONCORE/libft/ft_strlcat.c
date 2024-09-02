@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:13:22 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/30 13:25:37 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/02 23:15:16 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 	size_t	len_d;
 	size_t	len_s;
 
+	if ((!dest || !src) && !size)
+		return (0);
 	i = -1;
 	len_d = ft_strlen(dest);
 	len_s = ft_strlen(src);

@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:44:41 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/01 09:58:58 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/03 00:35:07 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new); // 39
 void	ft_lstdelone(t_list *lst, void (*del)(void *)); // 40
 void	ft_lstclear(t_list **lst, void (*del)(void *)); // 41
 void	ft_lstiter(t_list *lst, void (*f)(void *)); // 42
-t_list	*ft_lstmap(t_list *lst, void (*f)(void *), void (*del)(void *)); // 43
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *)); // 43
 
 #endif

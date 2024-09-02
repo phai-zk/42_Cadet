@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 21:17:27 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/02 18:31:19 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/03 01:06:55 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void (*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
 	t_list	*new_obj;
@@ -28,7 +28,7 @@ t_list	*ft_lstmap(t_list *lst, void (*f)(void *), void (*del)(void *))
 			ft_lstclear(&new_obj, del);
 			return (NULL);
 		}
-		f(new_obj -> content);
+		new_obj -> content = f(new_obj -> content);
 		ft_lstadd_back(&new_list, new_obj);
 		lst = lst -> next;
 	}
