@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 02:35:05 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/30 13:26:53 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/02 18:34:43 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int	i;
+	int		i;
+	t_list	*tmp;
 
-	i = 0;
-	while ((lst + i)-> next != NULL)
-		i++;
-	return (i);
+	i = (lst != NULL);
+	tmp = lst;
+	while (i++ && tmp -> next != NULL)
+		tmp = tmp -> next;
+	return (i - 1);
 }

@@ -153,7 +153,7 @@ Part 1
 
 Part 2
 ===========================================================================================
-| ft_strmapi	: Create a new char pointer that is 's' apile by '*f'.			  |
+| ft_strmapi	: Create a new char pointer that is 's' aply by '*f'.			  |
 |											  |
 | prototype	: char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));	  |
 |											  |
