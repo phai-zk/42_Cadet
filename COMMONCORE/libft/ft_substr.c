@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 17:33:45 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/03 02:19:12 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/04 19:26:07 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	s_len = ft_strlen(s);
 	if (start >= s_len)
-		return ((char *)malloc(sizeof(char)));
+		len = 0;
 	else if (len >= s_len)
 		len = s_len - start;
 	sub = (char *)malloc((len + 1) * sizeof(char));
