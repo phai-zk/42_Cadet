@@ -6,22 +6,20 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 02:33:14 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/03 06:08:07 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/06 09:22:50 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <string.h>
-#define TEST_SUCCESS 1
-#define TEST_FAILED 0
 
 int	main()
 {
-	char *s = "split  ||this|for|me|||||!|";
-	int i = 0;
-	char **result = ft_split(s, '|');
-	printf("%s\n", result[1]);
-	exit(TEST_SUCCESS);
+	char *test = ft_strtrim("", "");
+	// char *test = ft_substr("", 0, 0);
+	printf("%s\n", test);
+	free(test);
+	return (0);
 }
 
 // int	test_substr(void)

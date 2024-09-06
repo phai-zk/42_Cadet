@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 15:51:35 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/31 20:27:47 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/06 09:05:42 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_atoi(const char *nptr)
 
 	result = 0;
 	sign = 1;
-	while ((7 <= *nptr && *nptr <= 13) || *nptr == 32)
+	while ((9 <= *nptr && *nptr <= 13) || *nptr == 32)
 		nptr++;
 	if (*nptr == '-')
 		sign *= -1;

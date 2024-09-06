@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 13:03:17 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/31 06:23:03 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/06 09:22:25 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 
 	len = ft_strlen(s1);
-	str = (char *)malloc(len * sizeof(char));
-	if (!str)
-		return (NULL);
 	start = 0;
 	while (check(*(s1 + start), set))
 		start++;

@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 16:02:12 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/01 09:34:03 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/06 09:03:42 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ char	*ft_itoa(int n)
 	while ((ln / 10) > 0 && ++size)
 		ln /= 10;
 	str = (char *)malloc((size + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
 	str[size] = '\0';
 	ln = (long)n * sign;
 	while (--size >= 0)

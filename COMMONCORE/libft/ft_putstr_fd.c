@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 16:16:53 by chinujte          #+#    #+#             */
-/*   Updated: 2024/08/30 13:25:58 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/06 09:08:17 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
+	if (fd < 0)
+		return ;
 	while (*s)
 		ft_putchar_fd(*(s++), fd);
 }
