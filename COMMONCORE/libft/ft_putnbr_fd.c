@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 16:15:18 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/06 09:08:16 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/06 09:39:59 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	if (fd < 0)
-		return ;
 	long	nb;
 
+	if (fd < 0)
+		return ;
 	nb = n;
 	if (nb <= -2147483648)
 	{

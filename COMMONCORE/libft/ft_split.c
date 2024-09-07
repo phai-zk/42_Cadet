@@ -6,42 +6,53 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 16:29:07 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/06 09:25:49 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/08 02:38:28 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_word(char *s, char c)
+static void	*ft_free(char **str_arr, int size)
+{
+	int	i;
+
+	i = -1;
+	while (++i <= size)
+		free(str_arr[i]);
+	free(str_arr);
+	return (NULL);
+}
+
+int	counting_word(char *s, char c)
 {
 	int	count;
 
 	count = 0;
 	while (*s)
 	{
-		while (*s && (*s == c))
+		if (*s == c)
 			s++;
-		if (*s != '\0')
+		else
+		{
 			count++;
-		while (*s && !(*s == c))
-			s++;
+			while (*s && *s != c)
+				s++;
+		}
 	}
 	return (count);
 }
 
-static char	*get_word(char *s, char c)
+char	*get_word(char *s, char c)
 {
-	char	*str;
-	int		len;
 	int		i;
+	int		len;
+	char	*str;
 
-	len = 0;
-	while (s[len] && !(s[len] == c))
-		len++;
-	str = (char *)malloc(len * sizeof(char));
-	if (!str)
-		return (NULL);
 	i = -1;
+	len = 0;
+	while (s[len] && s[len] != c)
+		len++;
+	str = (char *)ft_calloc(len + 1, sizeof(char));
 	while (++i < len)
 		str[i] = s[i];
 	return (str);
@@ -49,27 +60,29 @@ static char	*get_word(char *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	char	**str_arr;
+	char	**strs;
+	char	*tmp;
 	int		size;
 	int		i;
 
-	size = count_word((char *)s, c);
-	str_arr = (char **)malloc((size + 1) * sizeof(char *));
-	if (!str_arr)
+	tmp = (char *)s;
+	size = counting_word(tmp, c);
+	i = 0;
+	strs = (char **)ft_calloc(size + 1, sizeof(char *));
+	if (!strs)
 		return (NULL);
-	if (!(*s))
+	while (i < size)
 	{
-		str_arr[0] = NULL;
-		return (str_arr);
+		if (*tmp == c)
+			tmp++;
+		else
+		{
+			strs[i] = get_word(tmp, c);
+			if (!strs[i])
+				return (ft_free(strs, i));
+			tmp += ft_strlen(strs[i]);
+			i++;
+		}
 	}
-	i = -1;
-	while (*s && (++i < size))
-	{
-		while (*s && (*s == c))
-			s++;
-		str_arr[i] = ft_strdup(get_word((char *)s, c));
-		while (*s && !(*s == c))
-			s++;
-	}
-	return (str_arr);
+	return (strs);
 }

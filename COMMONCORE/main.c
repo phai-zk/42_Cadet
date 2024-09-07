@@ -6,20 +6,41 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 02:33:14 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/06 09:22:50 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/07 23:13:42 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <string.h>
+#include <malloc.h>
+
+static void	*ft_free(char **str_arr, int size)
+{
+	int	i;
+
+	i = -1;
+	while (++i < size)
+		free(str_arr[i]);
+	free(str_arr);
+	return (NULL);
+}
+
+void	ft_print_result(char const *s)
+{
+	int		len;
+
+	len = 0;
+	while (s[len])
+		len++;
+	write(1, s, len);
+}
 
 int	main()
 {
-	char *test = ft_strtrim("", "");
-	// char *test = ft_substr("", 0, 0);
-	printf("%s\n", test);
-	free(test);
-	return (0);
+	char ** tab;
+	char * splitme = strdup("Tripouille");
+	tab = ft_split(splitme, ' ');
+	// printf("%ld : %ld\n", malloc_usable_size(tab), malloc_usable_size(malloc(sizeof(char *) * 2)));
 }
 
 // int	test_substr(void)
