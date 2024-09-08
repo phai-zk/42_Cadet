@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 16:29:07 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/08 02:38:28 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/08 23:07:29 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ char	*get_word(char *s, char c)
 	while (s[len] && s[len] != c)
 		len++;
 	str = (char *)ft_calloc(len + 1, sizeof(char));
+	if (!str)
+		return (NULL);
 	while (++i < len)
 		str[i] = s[i];
 	return (str);

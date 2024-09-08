@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 02:33:14 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/07 23:13:42 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/08 22:50:24 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,12 @@ void	ft_print_result(char const *s)
 
 int	main()
 {
-	char ** tab;
-	char * splitme = strdup("Tripouille");
-	tab = ft_split(splitme, ' ');
-	// printf("%ld : %ld\n", malloc_usable_size(tab), malloc_usable_size(malloc(sizeof(char *) * 2)));
+	char *str = ft_substr("hola", 2, 3);
+	char *s = malloc(sizeof(char) * 3);
+	printf("%s\n", str);
+	printf("%ld %ld\n", malloc_usable_size(str), malloc_usable_size(s));
+	free(str);
+	free(s);
 }
 
 // int	test_substr(void)

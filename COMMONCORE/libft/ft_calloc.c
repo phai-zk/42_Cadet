@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 15:53:41 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/01 08:00:49 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/08 23:10:12 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	if ((long)nmemb < 0 && (long)size < 0)
 		return (NULL);
-	arr = (void *)malloc(nmemb * size);
 	i = -1;
+	arr = (void *)malloc(nmemb * size);
 	if (!arr)
 		return (NULL);
 	while (++i < nmemb * size)

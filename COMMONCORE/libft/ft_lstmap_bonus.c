@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 21:17:27 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/03 01:06:55 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/08 23:05:09 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		if (new_obj == NULL)
 		{
 			ft_lstclear(&new_obj, del);
+			ft_lstclear(&new_list, del);
 			return (NULL);
 		}
 		new_obj -> content = f(new_obj -> content);
