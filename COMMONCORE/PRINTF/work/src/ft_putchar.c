@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 16:16:53 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/06 09:08:17 by chinujte         ###   ########.fr       */
+/*   Created: 2024/08/27 16:08:46 by chinujte          #+#    #+#             */
+/*   Updated: 2024/09/11 19:01:31 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libftprintf.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_putchar(char c)
 {
-	if (fd < 0)
-		return ;
-	while (*s)
-		ft_putchar_fd(*(s++), fd);
+	write(1, &c, 1);
+	return (1);
 }

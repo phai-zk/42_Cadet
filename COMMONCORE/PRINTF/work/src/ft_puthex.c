@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 16:08:46 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/06 09:08:11 by chinujte         ###   ########.fr       */
+/*   Created: 2024/06/05 18:14:03 by chinujte          #+#    #+#             */
+/*   Updated: 2024/09/11 18:40:12 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libftprintf.h"
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_puthex(int nbr, char *base_code)
 {
-	if (fd < 0)
-		return ;
-	write(fd, &c, sizeof(c));
+	int HEX;
+	int	length;
+
+	HEX = 16;
+	length = 0;
+	while (nbr > HEX)
+	{
+		length += ft_putchar(base_code[nbr % HEX]);
+		nbr /= HEX;
+	}
+	length += ft_putchar(base_code[nbr]);
+	return (length);
 }

@@ -1,9 +1,10 @@
 CC			= gcc
 SRCS		= ft_printf.c \
-
+src/ft_putchar.c  src/ft_putnbr.c  src/ft_putstr.c src/ft_itoa.c \
+src/ft_puthex.c
 
 OBJS		= $(SRCS:.c=.o)
-NAME		= libftprint.a
+NAME		= libftprintf.a
 LIB_CREATE	= ar rc
 LIB_RAN		= ranlib
 RM			= rm -f

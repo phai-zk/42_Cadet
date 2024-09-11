@@ -1,0 +1,17 @@
+{
+    "files.associations": {
+        "libft.h": "c",
+        "random": "c",
+        "array": "c",
+        "compare": "c",
+        "functional": "c",
+        "ostream": "c",
+        "ranges": "c",
+        "tuple": "c",
+        "type_traits": "c",
+        "utility": "c",
+        "stdarg.h": "c",
+        "libftprintf.h": "c",
+        "unistd.h": "c"
+    }
+}

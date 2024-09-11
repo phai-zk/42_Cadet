@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 15:48:43 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/11 16:02:40 by chinujte         ###   ########.fr       */
+/*   Created: 2024/08/27 16:16:53 by chinujte          #+#    #+#             */
+/*   Updated: 2024/09/11 17:01:45 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#include "../libftprintf.h"
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include "./src/libft.h"
+int	ft_putstr(char *s)
+{
+	int	i;
 
-int	ft_printf(const char *format, ...);
-
-#endif
+	i = -1;
+	while (s[++i])
+		ft_putchar(s[i]);
+	return (i);
+}

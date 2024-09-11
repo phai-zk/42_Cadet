@@ -1,0 +1,4 @@
+cd ./work
+make re
+make clean
+cd ..
