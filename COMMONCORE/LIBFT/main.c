@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 02:33:14 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/08 22:50:24 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/09 20:51:27 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,24 +25,39 @@ static void	*ft_free(char **str_arr, int size)
 	return (NULL);
 }
 
-void	ft_print_result(char const *s)
+// void	ft_print_result(char const *s)
+// {
+// 	int		len;
+
+// 	len = 0;
+// 	while (s[len])
+// 		len++;
+// 	write(1, s, len);
+// }
+
+void	ft_print_result(unsigned int i, char *s)
 {
 	int		len;
 
+	(void)i;
 	len = 0;
 	while (s[len])
 		len++;
 	write(1, s, len);
+	write(1, "\n", 1);
+}
+
+char changeCHARtoNUM(unsigned int i, char c)
+{
+	c = i + 49;
+	return (c);
 }
 
 int	main()
 {
-	char *str = ft_substr("hola", 2, 3);
-	char *s = malloc(sizeof(char) * 3);
-	printf("%s\n", str);
-	printf("%ld %ld\n", malloc_usable_size(str), malloc_usable_size(s));
-	free(str);
-	free(s);
+	ft_striteri("Hello", &ft_print_result);
+	// char *str = ft_strmapi("Hello", &changeCHARtoNUM);
+	// printf("%s\n", str);
 }
 
 // int	test_substr(void)

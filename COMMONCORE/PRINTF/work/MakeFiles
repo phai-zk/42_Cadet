@@ -1,0 +1,31 @@
+CC			= gcc
+SRCS		= ft_printf.c \
+
+
+OBJS		= $(SRCS:.c=.o)
+NAME		= libftprint.a
+LIB_CREATE	= ar rc
+LIB_RAN		= ranlib
+RM			= rm -f
+CFLAGS		= -Wall -Wextra -Werror
+
+.c.o:
+	@echo "Compile: $<."
+	@$(CC) $(CFLAGS) -c $< -o $@ -I .
+
+$(NAME): $(OBJS)
+	@$(LIB_CREATE) $(NAME) $(OBJS)
+	@$(LIB_RAN) $(NAME)
+	@echo "\nCreate lib complete!"
+
+all: $(NAME)
+
+clean:
+	@$(RM) $(OBJS)
+	@echo "Clean all object files"
+
+fclean: clean
+	@$(RM) $(NAME)
+	@echo "Clean full!"
+
+re: fclean all
