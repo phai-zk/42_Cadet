@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 16:15:18 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/12 01:32:06 by chinujte         ###   ########.fr       */
+/*   Created: 2024/09/12 00:43:14 by chinujte          #+#    #+#             */
+/*   Updated: 2024/09/12 01:51:57 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_putnbr(int n)
+int	ft_putptr(unsigned long long pointer)
 {
-	char	*str;
-	int		length;
+	int	length;
 
-	str = ft_itoa(n);
-	length = ft_putstr(str);
-	free(str);
-	return (length);
-}
-
-int	ft_putunnbr(unsigned int n)
-{
-	char	*str;
-	int		length;
-
-	str = ft_unitoa(n);
-	length = ft_putstr(str);
-	free(str);
+	if (!pointer)
+		return (ft_putstr("(nil)"));
+	length = ft_putstr("0x");
+	length += ft_putptrhex(pointer, "0123456789abcdef");
 	return (length);
 }

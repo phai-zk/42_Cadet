@@ -1,9 +1,9 @@
-#include "./work/libftprintf.h"
+#include "./work/ft_printf.h"
 
-int main(int argc, char const *argv[])
+int	main(void)
 {
-    int x = 10;
-    ft_printf("%%\n");
-    ft_printf("%X\n", x);
-    return 0;
+	// printf("%p %p %p %p %p %p %p %p %p %p %p\n", -1, 1, 15, 16, 17, -__LONG_MAX__ - 1, __LONG_MAX__, -__INT_MAX__ - 1, __INT_MAX__, 0, 0);
+	// ft_printf("%p %p %p %p %p %p %p %p %p %p %p\n", -1, 1, 15, 16, 17, -__LONG_MAX__ - 1, __LONG_MAX__, -__INT_MAX__ - 1, __INT_MAX__, 0, 0);
+	printf("%s\n", 0);
+	ft_printf("%s\n", 0);
 }

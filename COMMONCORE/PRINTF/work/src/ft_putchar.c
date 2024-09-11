@@ -6,11 +6,11 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 16:08:46 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/11 19:01:31 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/12 02:01:48 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libftprintf.h"
+#include "../ft_printf.h"
 
 int	ft_putchar(char c)
 {

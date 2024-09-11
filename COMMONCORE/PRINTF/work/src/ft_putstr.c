@@ -6,18 +6,24 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 16:16:53 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/11 17:01:45 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/12 02:23:55 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libftprintf.h"
+#include "../ft_printf.h"
 
 int	ft_putstr(char *s)
 {
-	int	i;
+	int		i;
+	char	*str;
 
-	i = -1;
-	while (s[++i])
-		ft_putchar(s[i]);
+	str = s;
+	if (!s)
+		str = ft_strdup("(null)");
+	i = 0;
+	while (str[i])
+		ft_putchar(str[i++]);
+	if (!s)
+		free(str);
 	return (i);
 }

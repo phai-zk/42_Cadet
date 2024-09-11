@@ -12,6 +12,8 @@
         "utility": "c",
         "stdarg.h": "c",
         "libftprintf.h": "c",
-        "unistd.h": "c"
+        "unistd.h": "c",
+        "ft_printf.h": "c",
+        "printf.h": "c"
     }
 }

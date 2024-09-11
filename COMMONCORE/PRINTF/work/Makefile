@@ -1,7 +1,7 @@
 CC			= gcc
 SRCS		= ft_printf.c \
 src/ft_putchar.c  src/ft_putnbr.c  src/ft_putstr.c src/ft_itoa.c \
-src/ft_puthex.c
+src/ft_puthex.c src/ft_putptr.c src/ft_strdup.c
 
 OBJS		= $(SRCS:.c=.o)
 NAME		= libftprintf.a

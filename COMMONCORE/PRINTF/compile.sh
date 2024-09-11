@@ -1,1 +1,1 @@
-cc ./main.c -L. ./work/libftprintf.a
+gcc ./main.c -L. ./work/libftprintf.a
