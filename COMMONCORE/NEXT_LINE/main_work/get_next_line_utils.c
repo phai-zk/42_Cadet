@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 15:43:56 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/17 22:51:38 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/17 23:33:28 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ t_line	*get_save(t_line *lst)
 	char	*content_next;
 
 	tmp = lst;
+	save = NULL;
 	while (tmp && tmp -> next)
 		tmp = tmp -> next;
 	if (tmp && tmp -> content)
@@ -78,11 +79,10 @@ t_line	*get_save(t_line *lst)
 			return (NULL);
 		content_next = ft_strdup(content_next + 1);
 		if (!content_next || !*content_next)
-			return (NULL);
+			return (free(content_next), NULL);
 		save = ft_lstnew(content_next);
-		free(content_next);
 		if (!save)
-			return (NULL);
+			return (free(content_next), NULL);
 	}
 	return (save);
 }

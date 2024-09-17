@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 00:53:28 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/17 22:19:05 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/17 23:07:30 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ char	*create_line(t_line *lst)
 			i = -1;
 			lst = lst -> next;
 		}
-		if (lst && lst -> content[i] == '\n')
+		if (lst && i >= 0 && lst -> content[i] == '\n')
 			return (str_line);
 	}
 	return (str_line);

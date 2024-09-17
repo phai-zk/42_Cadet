@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 12:47:20 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/15 00:35:45 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/18 00:06:09 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,11 @@ static int	formatting (va_list args, const char *format, int *idx)
 		return (ft_puthex(va_arg(args, unsigned int), "0123456789ABCDEF"));
 	else if (format[*idx] == 'p')
 		return (ft_putptr(va_arg(args, unsigned long long)));
-	return (ft_putchar('%'));
+	else if (format[*idx] == '%')
+		return (ft_putchar('%'));
+	ft_putchar('%');
+	ft_putchar(format[*idx]);
+	return (2);
 }
 
 int	ft_printf(const char *format, ...)
