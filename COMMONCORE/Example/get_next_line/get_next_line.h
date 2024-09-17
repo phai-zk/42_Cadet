@@ -3,36 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pkhienko <pkhienko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/15 00:46:11 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/17 03:25:23 by chinujte         ###   ########.fr       */
+/*   Created: 2024/09/08 19:25:28 by pkhienko          #+#    #+#             */
+/*   Updated: 2024/09/12 21:08:27 by pkhienko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE
-# define GET_NEXT_LINE
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-# include <stdio.h>
-# include <stdlib.h>
 # include <unistd.h>
+# include <stdlib.h>
 # include <fcntl.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10
 # endif
 
-typedef struct s_line
+typedef struct s_list
 {
-	char			*content;
-	struct s_line	*next;
-}	t_line;
+	char			*buffer;
+	struct s_list	*next;
+}	t_list;
+
+void	pull_line(t_list **list);
+void	add_back(t_list **list, char *new);
+void	create_list(t_list **list, int fd);
+void	list_strcpy(t_list *list, char *str);
+void	list_clean(t_list **list, t_list *new, char *str);
 
 char	*get_next_line(int fd);
-void	ft_lstadd_back(t_line **lst, t_line *new);
-void	ft_lstclear(t_line **lst);
-char	*ft_strdup(const char *s);
-t_line	*ft_lstnew(char *content);
-int		check_newline(t_line *lst);
+char	*get_line(t_list *list);
+
+int		list_len(t_list *list);
+int		check_new_line(t_list *list);
+
+t_list	*list_last(t_list *list);
 
 #endif

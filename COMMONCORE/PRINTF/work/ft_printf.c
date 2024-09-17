@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 12:47:20 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/12 07:43:01 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/15 00:35:45 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,17 @@ static int	formatting (va_list args, const char *format, int *idx)
 	*idx += 1;
 	if (format[*idx] == 'c')
 		return (ft_putchar(va_arg(args, int)));
-	if (format[*idx] == 's')
+	else if (format[*idx] == 's')
 		return (ft_putstr(va_arg(args, char *)));
-	if (format[*idx] == 'd' || format[*idx] == 'i')
+	else if (format[*idx] == 'd' || format[*idx] == 'i')
 		return (ft_putnbr(va_arg(args, int)));
-	if (format[*idx] == 'u')
+	else if (format[*idx] == 'u')
 		return (ft_putunnbr(va_arg(args, unsigned int)));
-	if (format[*idx] == 'x')
+	else if (format[*idx] == 'x')
 		return (ft_puthex(va_arg(args, unsigned int), "0123456789abcdef"));
-	if (format[*idx] == 'X')
+	else if (format[*idx] == 'X')
 		return (ft_puthex(va_arg(args, unsigned int), "0123456789ABCDEF"));
-	if (format[*idx] == 'p')
+	else if (format[*idx] == 'p')
 		return (ft_putptr(va_arg(args, unsigned long long)));
 	return (ft_putchar('%'));
 }

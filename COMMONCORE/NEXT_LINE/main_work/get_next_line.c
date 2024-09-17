@@ -1,29 +1,120 @@
-#include <fcntl.h>   // for open()
-#include <unistd.h>  // for read(), close()
-#include <stdio.h>   // for printf()
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/15 00:53:28 by chinujte          #+#    #+#             */
+/*   Updated: 2024/09/17 03:35:46 by chinujte         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int main() {
-    char buffer[100];
-    int fd = open("example.txt", O_RDONLY); // Open the file in read-only mode
-    if (fd == -1) {
-        // Handle error if the file cannot be opened
-        perror("Error opening file");
-        return 1;
-    }
+#include "get_next_line.h"
 
-    ssize_t bytesRead = read(fd, buffer, sizeof(buffer) - 1);
-    if (bytesRead == -1) {
-        // Handle read error
-        perror("Error reading file");
-        close(fd);
-        return 1;
-    }
+int	check_newline(t_line *lst)
+{
+	int	i;
 
-    // Null-terminate the buffer to safely print it as a string
-    buffer[bytesRead] = '\0';
+	if (!lst || !lst -> content || !lst -> content[0])
+		return (0);
+	i = -1;
+	while (lst -> content[++i])
+		if (lst -> content[i] == '\n')
+			return (1);
+	return (0);
+}
 
-    printf("Data read from file: \n%s\n", buffer);
+int	contents_length(t_line *lst)
+{
+	int	len;
+	int	i;
 
-    close(fd); // Always close the file descriptor
-    return 0;
+	len = 0;
+	i = -1;
+	while (lst)
+	{
+		if (lst -> content[++i] == '\n')
+			return (len);
+		if (!lst -> content[i])
+		{
+			i = -1;
+			lst = lst -> next;
+		}
+		else{
+			len++;}
+	}
+	return (len);
+}
+
+char	*create_line(t_line *lst)
+{
+	char	*str_line;
+	int		i;
+	int		j;
+	int		length;
+
+	i = -1;
+	j = 0;
+	length = contents_length(lst);
+	str_line = (char *)malloc((length + 1) * sizeof(char));
+	if (!str_line)
+		return (NULL);
+	while (lst)
+	{
+		if (lst -> content[++i] == '\n')
+			return (str_line);
+		if (lst -> content[i] && j < length)
+			str_line[j++] = lst -> content[i];
+		else if (!lst -> content[i])
+		{
+			i = -1;
+			lst = lst -> next;
+		}
+	}
+	str_line[length] = '\0';
+	return (str_line);
+}
+
+void	read_line(t_line **lst, int fd)
+{
+	char	*text;
+	t_line	*tmp;
+	ssize_t	buffer;
+
+	buffer = 1;
+	tmp = *lst;
+	while (buffer > 0 && !check_newline(tmp))
+	{
+		text = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
+		if (!text)
+			return ;
+		buffer = read(fd, text, BUFFER_SIZE);
+		if (buffer <= 0)
+		{
+			free(text); 
+			return ;
+		}
+		text[buffer] = '\0';
+		tmp = ft_lstnew(text);
+		free(text);
+		if (!tmp)
+			return ;
+		ft_lstadd_back(lst, tmp);
+	}
+}
+
+char	*get_next_line(int fd)
+{
+	static t_line	*lst_line;
+	char			*content;
+
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, &content, 0) < 0 )
+		return (NULL);
+	read_line(&lst_line, fd);
+	if (!lst_line)
+		return (NULL);
+	content = create_line(lst_line);
+	ft_lstclear(&lst_line);
+	return (content);
 }
