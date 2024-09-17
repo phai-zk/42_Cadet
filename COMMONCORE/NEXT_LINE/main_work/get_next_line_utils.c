@@ -5,12 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/15 01:11:17 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/17 04:09:36 by chinujte         ###   ########.fr       */
+/*   Created: 2024/09/17 15:43:56 by chinujte          #+#    #+#             */
+/*   Updated: 2024/09/17 22:51:38 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+
+#include "./get_next_line.h"
 
 char	*ft_strdup(const char *s)
 {
@@ -62,23 +63,26 @@ void	ft_lstadd_back(t_line **lst, t_line *new)
 t_line	*get_save(t_line *lst)
 {
 	t_line	*save;
+	t_line	*tmp;
 	char	*content_next;
 
-	save = lst;
-	while (save && save -> next)
-		save = save -> next;
-	if (save && save -> content)
+	tmp = lst;
+	while (tmp && tmp -> next)
+		tmp = tmp -> next;
+	if (tmp && tmp -> content)
 	{
-		content_next = save -> content;
+		content_next = tmp -> content;
 		while (*content_next && *content_next != '\n')
 			content_next++;
 		if (!*content_next)
 			return (NULL);
 		content_next = ft_strdup(content_next + 1);
-		if (!content_next)
+		if (!content_next || !*content_next)
 			return (NULL);
-		free(save -> content);
-		save -> content = content_next;
+		save = ft_lstnew(content_next);
+		free(content_next);
+		if (!save)
+			return (NULL);
 	}
 	return (save);
 }

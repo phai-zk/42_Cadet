@@ -6,7 +6,21 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 00:53:28 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/17 03:35:46 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/17 22:19:05 by chinujte         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "get_next_line.h"
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/15 01:11:17 by chinujte          #+#    #+#             */
+/*   Updated: 2024/09/17 13:27:35 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +30,7 @@ int	check_newline(t_line *lst)
 {
 	int	i;
 
-	if (!lst || !lst -> content || !lst -> content[0])
+	if (!lst || !lst -> content)
 		return (0);
 	i = -1;
 	while (lst -> content[++i])
@@ -35,7 +49,7 @@ int	contents_length(t_line *lst)
 	while (lst)
 	{
 		if (lst -> content[++i] == '\n')
-			return (len);
+			return (len + 1);
 		if (!lst -> content[i])
 		{
 			i = -1;
@@ -60,10 +74,9 @@ char	*create_line(t_line *lst)
 	str_line = (char *)malloc((length + 1) * sizeof(char));
 	if (!str_line)
 		return (NULL);
-	while (lst)
+	str_line[length] = '\0';
+	while (lst && ++i + 1)
 	{
-		if (lst -> content[++i] == '\n')
-			return (str_line);
 		if (lst -> content[i] && j < length)
 			str_line[j++] = lst -> content[i];
 		else if (!lst -> content[i])
@@ -71,8 +84,9 @@ char	*create_line(t_line *lst)
 			i = -1;
 			lst = lst -> next;
 		}
+		if (lst && lst -> content[i] == '\n')
+			return (str_line);
 	}
-	str_line[length] = '\0';
 	return (str_line);
 }
 
