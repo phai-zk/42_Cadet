@@ -6,21 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 00:53:28 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/18 08:11:06 by chinujte         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "get_next_line.h"
-
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/15 01:11:17 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/17 13:27:35 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/19 16:16:20 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +41,8 @@ int	contents_length(t_line *lst)
 			i = -1;
 			lst = lst -> next;
 		}
-		else{
-			len++;}
+		else
+			len++;
 	}
 	return (len);
 }
@@ -106,7 +92,7 @@ void	read_line(t_line **lst, int fd)
 		buffer = read(fd, text, BUFFER_SIZE);
 		if (buffer <= 0)
 		{
-			free(text); 
+			free(text);
 			return ;
 		}
 		text[buffer] = '\0';
@@ -123,7 +109,7 @@ char	*get_next_line(int fd)
 	static t_line	*lst_line;
 	char			*content;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, &content, 0) < 0 )
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, &content, 0) < 0)
 		return (NULL);
 	read_line(&lst_line, fd);
 	if (!lst_line)

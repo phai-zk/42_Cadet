@@ -6,14 +6,11 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 16:02:12 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/12 00:02:15 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/19 16:12:28 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
+#include "../ft_printf.h"
 
 char	*ft_itoa(int n)
 {

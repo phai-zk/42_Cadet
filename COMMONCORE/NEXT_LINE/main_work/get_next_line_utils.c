@@ -5,11 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/17 15:43:56 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/18 08:30:33 by chinujte         ###   ########.fr       */
+/*   Created: 2024/09/19 16:15:30 by chinujte          #+#    #+#             */
+/*   Updated: 2024/09/19 16:17:01 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "./get_next_line.h"
 
@@ -34,7 +33,7 @@ char	*ft_strdup(const char *s)
 t_line	*ft_lstnew(char *content)
 {
 	t_line	*new_node;
-	
+
 	if (!content)
 		return (NULL);
 	new_node = (t_line *)malloc(sizeof(t_line));
@@ -83,7 +82,7 @@ t_line	*get_save(t_line *lst)
 		save = ft_lstnew(content_next);
 		if (!save)
 			return (free(content_next), NULL);
-	} 
+	}
 	return (save);
 }
 

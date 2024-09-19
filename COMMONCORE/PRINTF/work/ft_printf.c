@@ -6,13 +6,13 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 12:47:20 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/18 00:06:09 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/19 16:11:19 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	formatting (va_list args, const char *format, int *idx)
+static int	formatting(va_list args, const char *format, int *idx)
 {
 	*idx += 1;
 	if (format[*idx] == 'c')
@@ -45,7 +45,6 @@ int	ft_printf(const char *format, ...)
 	if (!format || *format == '\0')
 		return (0);
 	length = 0;
-	(void)length;
 	i = -1;
 	va_start(args, format);
 	while (format[++i])
