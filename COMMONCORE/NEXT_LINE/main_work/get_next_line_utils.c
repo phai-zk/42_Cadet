@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 15:43:56 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/17 23:33:28 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/18 08:30:33 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ t_line	*get_save(t_line *lst)
 		save = ft_lstnew(content_next);
 		if (!save)
 			return (free(content_next), NULL);
-	}
+	} 
 	return (save);
 }
 
