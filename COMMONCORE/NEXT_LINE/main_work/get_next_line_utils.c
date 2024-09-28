@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 16:15:30 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/19 16:17:01 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/28 14:33:16 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,39 +59,25 @@ void	ft_lstadd_back(t_line **lst, t_line *new)
 	last_point -> next = new;
 }
 
-t_line	*get_save(t_line *lst)
+char	*ft_strchr(const char *s)
 {
-	t_line	*save;
-	t_line	*tmp;
-	char	*content_next;
+	int		i;
+	char	*str;
 
-	tmp = lst;
-	save = NULL;
-	while (tmp && tmp -> next)
-		tmp = tmp -> next;
-	if (tmp && tmp -> content)
-	{
-		content_next = tmp -> content;
-		while (*content_next && *content_next != '\n')
-			content_next++;
-		if (!*content_next)
-			return (NULL);
-		content_next = ft_strdup(content_next + 1);
-		if (!content_next || !*content_next)
-			return (free(content_next), NULL);
-		save = ft_lstnew(content_next);
-		if (!save)
-			return (free(content_next), NULL);
-	}
-	return (save);
+	i = -1;
+	str = (char *)s;
+	while (str[++i])
+		if (str[i] == '\n' && str[i + 1] != '\0')
+			return (&(str[i + 1]));
+	return (NULL);
 }
 
-void	ft_lstclear(t_line **lst)
+void	ft_lstclear(t_line **lst, t_line *last)
 {
 	t_line	*tmp;
 	t_line	*save;
 
-	save = get_save(*lst);
+	save = ft_lstnew(ft_strchr(last -> content));
 	while (*lst)
 	{
 		tmp = (*lst)->next;

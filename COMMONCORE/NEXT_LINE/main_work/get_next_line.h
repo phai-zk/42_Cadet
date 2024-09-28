@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 00:46:11 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/19 16:15:58 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/28 14:22:08 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_line
 
 char	*get_next_line(int fd);
 void	ft_lstadd_back(t_line **lst, t_line *new);
-void	ft_lstclear(t_line **lst);
+void	ft_lstclear(t_line **lst, t_line *last);
 char	*ft_strdup(const char *s);
 t_line	*ft_lstnew(char *content);
 int		check_newline(t_line *lst);

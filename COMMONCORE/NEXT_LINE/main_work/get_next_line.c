@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 00:53:28 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/19 16:16:20 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/28 14:25:09 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	check_newline(t_line *lst)
 {
 	int	i;
 
-	if (!lst || !lst -> content)
+	if (!lst)
 		return (0);
 	i = -1;
 	while (lst -> content[++i])
@@ -107,6 +107,7 @@ void	read_line(t_line **lst, int fd)
 char	*get_next_line(int fd)
 {
 	static t_line	*lst_line;
+	t_line			*last;
 	char			*content;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, &content, 0) < 0)
@@ -115,6 +116,9 @@ char	*get_next_line(int fd)
 	if (!lst_line)
 		return (NULL);
 	content = create_line(lst_line);
-	ft_lstclear(&lst_line);
+	last = lst_line;
+	while (last -> next)
+		last = last -> next;
+	ft_lstclear(&lst_line, last);
 	return (content);
 }
