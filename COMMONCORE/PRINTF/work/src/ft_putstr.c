@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/27 16:16:53 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/12 02:23:55 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/09/28 10:15:36 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_putstr(char *s)
 
 	str = s;
 	if (!s)
-		str = ft_strdup("(null)");
+		return (ft_putstr("(null)"));
 	i = 0;
 	while (str[i])
 		ft_putchar(str[i++]);
