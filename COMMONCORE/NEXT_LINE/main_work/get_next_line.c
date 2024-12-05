@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 00:53:28 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/28 14:25:09 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/11/28 13:14:29 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	check_newline(t_line *lst)
 	if (!lst)
 		return (0);
 	i = -1;
-	while (lst -> content[++i])
-		if (lst -> content[i] == '\n')
+	while (lst->content[++i])
+		if (lst->content[i] == '\n')
 			return (1);
 	return (0);
 }
@@ -34,12 +34,12 @@ int	contents_length(t_line *lst)
 	i = -1;
 	while (lst)
 	{
-		if (lst -> content[++i] == '\n')
+		if (lst->content[++i] == '\n')
 			return (len + 1);
-		if (!lst -> content[i])
+		if (!lst->content[i])
 		{
 			i = -1;
-			lst = lst -> next;
+			lst = lst->next;
 		}
 		else
 			len++;
@@ -63,14 +63,14 @@ char	*create_line(t_line *lst)
 	str_line[length] = '\0';
 	while (lst && ++i + 1)
 	{
-		if (lst -> content[i] && j < length)
-			str_line[j++] = lst -> content[i];
-		else if (!lst -> content[i])
+		if (lst->content[i] && j < length)
+			str_line[j++] = lst->content[i];
+		else if (!lst->content[i])
 		{
 			i = -1;
-			lst = lst -> next;
+			lst = lst->next;
 		}
-		if (lst && i >= 0 && lst -> content[i] == '\n')
+		if (lst && i >= 0 && lst->content[i] == '\n')
 			return (str_line);
 	}
 	return (str_line);
@@ -111,14 +111,20 @@ char	*get_next_line(int fd)
 	char			*content;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, &content, 0) < 0)
+	{
+		ft_lstclear(&lst_line, NULL);
 		return (NULL);
+	}
 	read_line(&lst_line, fd);
 	if (!lst_line)
+	{
+		ft_lstclear(&lst_line, NULL);
 		return (NULL);
+	}
 	content = create_line(lst_line);
 	last = lst_line;
-	while (last -> next)
-		last = last -> next;
+	while (last->next)
+		last = last->next;
 	ft_lstclear(&lst_line, last);
 	return (content);
 }

@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 16:15:30 by chinujte          #+#    #+#             */
-/*   Updated: 2024/09/28 14:33:16 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/11/28 13:10:18 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,9 @@ void	ft_lstclear(t_line **lst, t_line *last)
 	t_line	*tmp;
 	t_line	*save;
 
-	save = ft_lstnew(ft_strchr(last -> content));
+	save = NULL;
+	if (last)
+		save = ft_lstnew(ft_strchr(last -> content));
 	while (*lst)
 	{
 		tmp = (*lst)->next;
