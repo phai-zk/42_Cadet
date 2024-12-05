@@ -6,7 +6,7 @@
 /*   By: chinujte <chinujte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 00:53:28 by chinujte          #+#    #+#             */
-/*   Updated: 2024/11/28 13:14:29 by chinujte         ###   ########.fr       */
+/*   Updated: 2024/12/05 19:52:56 by chinujte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ char	*create_line(t_line *lst)
 	return (str_line);
 }
 
-void	read_line(t_line **lst, int fd)
+int	read_line(t_line **lst, int fd)
 {
 	char	*text;
 	t_line	*tmp;
@@ -88,20 +88,21 @@ void	read_line(t_line **lst, int fd)
 	{
 		text = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
 		if (!text)
-			return ;
+			return (0);
 		buffer = read(fd, text, BUFFER_SIZE);
 		if (buffer <= 0)
 		{
 			free(text);
-			return ;
+			return (buffer);
 		}
 		text[buffer] = '\0';
 		tmp = ft_lstnew(text);
 		free(text);
 		if (!tmp)
-			return ;
+			return (0);
 		ft_lstadd_back(lst, tmp);
 	}
+	return (1);
 }
 
 char	*get_next_line(int fd)
@@ -110,7 +111,7 @@ char	*get_next_line(int fd)
 	t_line			*last;
 	char			*content;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, &content, 0) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 	{
 		ft_lstclear(&lst_line, NULL);
 		return (NULL);

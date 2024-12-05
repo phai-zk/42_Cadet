@@ -37,11 +37,9 @@ void TestLoop(int fd)
 	char *str;
 	int i = 0;
 
-	str = get_next_line(fd);
-	while (str){
+	while ((str = get_next_line(fd))){
 		printf("line %d : @%s@\n", ++i, str);
 		free(str);
-		str = get_next_line(fd);
 	}
 	free(str);
 }
